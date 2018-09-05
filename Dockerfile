@@ -1,5 +1,5 @@
 # DOCKER-VERSION        1.3.2
-
+FROM composer:latest as composer
 FROM php:7.2-cli
 
 ARG SWOOLEVERSION
@@ -27,8 +27,7 @@ RUN mkdir -p /tmp/swoole && \
 COPY swoole.ini /usr/local/etc/php/conf.d/000-swoole.ini
 
 # Install composer
-COPY getcomposer.sh /usr/local/bin/
-RUN /usr/local/bin/getcomposer.sh
+COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
 # Project files
 RUN mkdir -p /var/www/public
