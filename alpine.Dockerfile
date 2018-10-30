@@ -1,11 +1,10 @@
 # DOCKER-VERSION        1.3.2
 
-FROM php:7.2-cli
+FROM php:7.2-cli-alpine
 
 # System dependencies
-RUN apt-get update && \
-  apt-get install -y procps git libbz2-dev libicu-dev libtidy-dev libxslt1-dev zlib1g-dev && \
-  rm -rf /var/lib/apt/lists/*
+RUN apk update && \
+    apk add --no-cache procps git libbz2 libxslt zlib-dev autoconf make gcc g++
 
 # PHP configuration
 COPY swoole.ini /usr/local/etc/php/conf.d/000-swoole.ini
