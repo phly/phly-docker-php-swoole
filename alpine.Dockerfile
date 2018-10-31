@@ -1,6 +1,6 @@
 # DOCKER-VERSION        1.3.2
 
-FROM php:7.2-cli-alpine
+FROM php:7.2-cli-alpine3.8
 
 # System dependencies
 RUN apk update && \
