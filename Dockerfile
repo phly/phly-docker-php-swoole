@@ -1,6 +1,9 @@
 # DOCKER-VERSION        1.3.2
+
 FROM composer:latest as composer
 FROM php:7.2-cli
+
+WORKDIR /var/www
 
 ARG SWOOLEVERSION
 ENV SWOOLEPACKAGE swoole-$SWOOLEVERSION.tgz
@@ -30,7 +33,6 @@ COPY swoole.ini /usr/local/etc/php/conf.d/000-swoole.ini
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
 # Project files
-RUN mkdir -p /var/www/public
 COPY index.php /var/www/public/
 COPY entrypoint /usr/local/bin/
 
