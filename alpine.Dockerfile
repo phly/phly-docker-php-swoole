@@ -16,7 +16,7 @@ RUN mkdir -p /tmp/swoole && \
     curl -s -o swoole.tgz https://pecl.php.net/get/$SWOOLEPACKAGE && \
     tar xzvf swoole.tgz --strip-components=1 && \
     phpize && \
-    ./configure --enable-sockets --enable-http2 && \
+    ./configure --enable-http2 && \
     make && \
     make install && \
     cd /tmp && \
