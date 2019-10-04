@@ -1,7 +1,7 @@
 # DOCKER-VERSION        1.3.2
 
 FROM composer:latest as composer
-FROM php:7.2-cli-alpine3.8
+FROM php:7.3-cli-alpine
 
 WORKDIR /var/www
 
@@ -30,6 +30,9 @@ COPY swoole.ini /usr/local/etc/php/conf.d/000-swoole.ini
 
 # Install composer
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
+
+# Install Prestissimo composer plugin
+RUN composer global require hirak/prestissimo
 
 # Project files
 COPY index.php /var/www/public/
