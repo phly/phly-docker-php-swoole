@@ -10,7 +10,7 @@ ENV SWOOLEPACKAGE swoole-$SWOOLEVERSION.tgz
 
 # System dependencies
 RUN apk update && \
-    apk add --no-cache autoconf g++ gcc git libbz2 libxslt make nghttp2-dev procps zlib-dev && \
+    apk add --no-cache bash autoconf g++ gcc git libbz2 libxslt make nghttp2-dev procps zlib-dev && \
     docker-php-ext-install -j$(nproc) sockets
 
 # Compile and install Swoole
