@@ -3,11 +3,11 @@
 This repository provides tools for building and pushing the following Docker
 images:
 
-- **mwop/phly-docker-php-swoole:7.3**: an image based on php:7.3-cli that
+- **mwop/phly-docker-php-swoole:7.4**: an image based on php:7.4-cli that
   includes [Composer](https://getcomposer.org), the hirak/prestissimo Composer
   plugin, and the [Swoole](https://swoole.co.uk) extension.
 
-- **mwop/phly-docker-php-swoole:7.3-alpine**: an image based on
+- **mwop/phly-docker-php-swoole:7.4-alpine**: an image based on
   php:7.3-cli-alpine that includes [Composer](https://getcomposer.org), the
   hirak/prestissimo Composer plugin, and the [Swoole](https://swoole.co.uk)
   extension.
@@ -25,7 +25,7 @@ runs an [Expressive](https://getexpressive.org) application:
 ```Dockerfile
 # DOCKER-VERSION        1.3.2
 
-FROM mwop/phly-docker-php-swoole:7.3
+FROM mwop/phly-docker-php-swoole:7.4
 
 # PHP Extensions
 RUN docker-php-ext-install -j$(nproc) bcmath bz2 intl opcache zip
