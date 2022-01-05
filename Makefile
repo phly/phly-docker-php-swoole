@@ -3,7 +3,7 @@
 # Build the docker image from the Dockerfile present.
 #
 
-SWOOLEVERSION?=4.4.17
+SWOOLEVERSION?=4.8.5
 
 .PHONY : all standard alpine
 

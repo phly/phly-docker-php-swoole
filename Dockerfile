@@ -32,9 +32,6 @@ COPY swoole.ini $PHP_INI_DIR/conf.d/000-swoole.ini
 # Install composer
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
-# Install Prestissimo composer plugin
-RUN composer global require hirak/prestissimo
-
 # Project files
 COPY index.php /var/www/public/
 COPY entrypoint /usr/local/bin/
