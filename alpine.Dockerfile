@@ -1,7 +1,6 @@
 # DOCKER-VERSION        1.3.2
 
 FROM composer:latest as composer
-
 FROM php:7.4-cli-alpine
 
 WORKDIR /var/www
