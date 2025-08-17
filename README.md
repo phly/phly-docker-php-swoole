@@ -1,5 +1,9 @@
 # phly-docker-php-swoole
 
+> :warning: **Archived 2025-08-17**
+> 
+> Use at your own risk.
+
 This repository provides tools for building and pushing the following Docker
 images:
 
